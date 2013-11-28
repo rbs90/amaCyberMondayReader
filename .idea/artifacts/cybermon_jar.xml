@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="cybermon.jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/cybermon_jar</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Ama" />
+        <option name="description" value="" />
+        <option name="htmlParamFile" value="" />
+        <option name="paramFile" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="cybermon.jar">
+        <element id="module-output" name="project1" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/lib/BrowserLauncher2-all-1_3.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/lib/jsoup-1.7.3.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/lib/ScenicView.jar" path-in-jar="/" />
+      </element>
+    </root>
+  </artifact>
+</component>

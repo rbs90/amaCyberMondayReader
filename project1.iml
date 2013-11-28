@@ -7,6 +7,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jsoup-1.7.3" level="project" />
+    <orderEntry type="library" name="ScenicView" level="project" />
+    <orderEntry type="library" name="BrowserLauncher2-all-1_3" level="project" />
   </component>
 </module>
 

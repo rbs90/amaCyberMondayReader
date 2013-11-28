@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="BrowserLauncher2-all-1_3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/BrowserLauncher2-all-1_3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/BrowserLauncher2-all-1_3.jar!/source" />
+    </SOURCES>
+  </library>
+</component>
