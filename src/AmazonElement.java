@@ -73,4 +73,40 @@ public class AmazonElement {
     public String getStartingTime() {
         return startingTime;
     }
+
+    public String generateHTML() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("<div class='ama_elem'>");
+        sb.append("<img src='" + img_href + "'class='name'></img>");
+        sb.append("<div class='name'><a href='" + href + "'>" + escapeHTML(name) + "</a></div>");
+
+        if(percent_used > -1) {
+            sb.append("<div class='perc_used'><div class='bar' style='width: " + percent_used + "%'>" + percent_used + "%</div></div>");
+            sb.append("<div class='price'>" + escapeHTML(price) + "</div>");
+        } else {
+            sb.append("<div class='time'>Startet: " + startingTime + "</div>");
+        }
+
+
+
+
+        sb.append("</div>");
+
+        return sb.toString();
+    }
+
+    private static String escapeHTML(String s) {
+        StringBuilder out = new StringBuilder(Math.max(16, s.length()));
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c > 127 || c == '"' || c == '<' || c == '>' || c == '&') {
+                out.append("&#");
+                out.append((int) c);
+                out.append(';');
+            } else {
+                out.append(c);
+            }
+        }
+        return out.toString();
+    }
 }
