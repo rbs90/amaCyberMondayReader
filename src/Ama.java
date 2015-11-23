@@ -57,7 +57,6 @@ public class Ama extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         webView = new WebView();
-        //webEngine = webView.getEngine();
 
         if(getParameters().getRaw().size() != 1){
             System.out.println("Error. Usage: cybermonday.jar <output html file>");
@@ -105,61 +104,15 @@ public class Ama extends Application{
                     websiteAnalyserThread.start();
 
                 }
-
-
             }
         });
 
         webView.getEngine().load("http://www.amazon.de/gp/angebote/");
         stage.setMinHeight(500);
         stage.setHeight(800);
-        stage.setMinWidth(600);
-        stage.setWidth(1000);
+        stage.setMinWidth(500);
+        stage.setWidth(800);
         stackPane = new StackPane();
-        /*
-        dealBox.setStyle("-fx-background-color: #010229;");
-        dealBox.setSpacing(10);
-        stackPane.getChildren().add(webView);
-        ScrollPane scrollPane = new ScrollPane();
-        scrollPane.setContent(dealBox);
-        scrollPane.setFitToHeight(true);
-        scrollPane.setFitToHeight(true);
-        BorderPane borderPane = new BorderPane();
-        borderPane.setMaxWidth(Double.MAX_VALUE);
-
-        stage.setTitle("AmazonCyberDealCollector v1.0 by rbs90.de");
-
-        reloadButton = new Button("Bitte einen Moment Geduld ;) Die Weltherschaft wird vorbereitet...");
-        reloadButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                reload();
-            }
-        });
-        reloadButton.setMaxWidth(Double.MAX_VALUE);
-        borderPane.setBottom(reloadButton);
-
-        dealBox.setMaxWidth(Double.MAX_VALUE);
-        dealBox.setFillWidth(true);
-        dealBox.minWidthProperty().bind(scrollPane.widthProperty().subtract(10));
-
-        scrollPane.setMaxWidth(Double.MAX_VALUE);
-        borderPane.setCenter(scrollPane);
-        stackPane.getChildren().add(borderPane);
-        stage.setScene(new Scene(stackPane));
-        this.stage = stage;
-        this.stage.show();
-
-
-        //ScenicView.show(stage.getScene());
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent t) {
-                Platform.exit();
-                System.exit(0);
-            }
-        });
-         */
     }
 
     private boolean analyseSite() {
@@ -181,7 +134,7 @@ public class Ama extends Application{
             });
 
             while (html[0] == null) {
-                sleep(100);
+                sleep(10);
                 wait_count++;
                 //System.out.println("waiting1...");
             }
@@ -194,11 +147,11 @@ public class Ama extends Application{
                     waiting = false;
             } else {
                 //System.out.println("waiting2...");
-                sleep(100);
+                sleep(10);
                 wait_count++;
             }
 
-            if(wait_count > 20){
+            if(wait_count > 200){
                 System.out.println("RELOADING!!!");
                 Platform.runLater(new Runnable() {
                     @Override
@@ -278,6 +231,8 @@ public class Ama extends Application{
                     dealBox.getChildren().add(new DealPane(amazonElement));
                 }
             });
+
+
             deals.add(amazonElement);
             dealNumber++;
         }

@@ -1,0 +1,66 @@
+body {
+    background: gray;
+}
+
+.ama_elem {
+    float: left;
+    width: 230px;
+    height: 230px;
+    margin: 10px;
+    border: 2px solid black;
+    background: white;
+    padding: 5px;
+    position: relative;
+}
+
+.bar {
+    background: black;
+    height: 20px;
+    color: white;
+}
+
+.perc_used {
+    background: darkgray;
+    height: 20px;
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+}
+
+.ama_elem img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.price {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    font-size: 1.4em;
+    font-family: sans-serif;
+    font-weight: bold;
+    background: rgba(255,255,255, 0.8);
+    border: 1px solid black;
+    padding: 3px;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: 1.8em;
+    margin: 15px;
+}
+
+.time {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+#searchbar {
+    margin: 10px;
+    font-size: 1.4em;
+    font-weight: bolder;
+}
