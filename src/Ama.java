@@ -81,8 +81,12 @@ public class Ama extends Application{
                             try {
                                 fileWriter = new BufferedWriter(new FileWriter(outputFile));
                                 fileWriter.write("<html><head><link rel='stylesheet' href='style.css'>" +
-                                        "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js\"></script><script src=\"script.js\"></script></head><body>" +
-                                        "<h1>Amazon Cyber Monday &Uuml;bersicht</h1><p>Stand: " + new Date().toString() + "</p><input id=\"searchbar\" placeholder=\"Suchen...\" type=\"search\"></input><br>");
+                                        "<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js\"></script>" +
+                                        "<script src=\"jquery_cookie/jquery.cookie.js\"></script>" +
+                                        "</script><script src=\"script.js\"></script>" +
+                                        "</head><body>" +
+                                        "<h1>Amazon Cyber Monday &Uuml;bersicht</h1><p>Stand: " + new Date().toString() + "</p><input id=\"searchbar\" placeholder=\"Suchen...\" type=\"search\"></input>" +
+                                        "<div class=\"favButton\">Nur Favoriten zeigen</div><br>");
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }

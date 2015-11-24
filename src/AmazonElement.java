@@ -15,6 +15,8 @@ public class AmazonElement {
     int percent_used = -1;
     private String startingTime;
 
+    String id;
+
     public String getName() {
         return name;
     }
@@ -36,10 +38,18 @@ public class AmazonElement {
     }
 
     public void setHref(String href) {
+
         if(href.contains("amazon.de"))
             this.href = href;
         else
             this.href = "http://www.amazon.de/" + href;
+
+        this.href = this.href.replaceAll("//gp", "/gp");
+
+        if(href.contains("gp/product"))
+            this.id = this.href.split("/")[5];
+        else
+            this.id = this.href.split("/")[4];
     }
 
     public String getImg_href() {
@@ -76,7 +86,7 @@ public class AmazonElement {
 
     public String generateHTML() {
         StringBuilder sb = new StringBuilder();
-        sb.append("<div class='ama_elem'>");
+        sb.append("<div class='ama_elem' id='" + id + "'>");
         sb.append("<img src='" + img_href + "'class='name'></img>");
         sb.append("<div class='name'><a href='" + href + "'>" + escapeHTML(name) + "</a></div>");
 
@@ -86,6 +96,8 @@ public class AmazonElement {
         } else {
             sb.append("<div class='time'>Startet: " + startingTime + "</div>");
         }
+
+        sb.append("<div class='fav'></div>");
 
 
 

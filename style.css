@@ -26,6 +26,7 @@ body {
     left: 5px;
     right: 5px;
     bottom: 5px;
+    line-height: 20px;
 }
 
 .ama_elem img {
@@ -51,6 +52,7 @@ h1 {
     font-family: sans-serif;
     font-size: 1.8em;
     margin: 15px;
+    font-weight: bold;
 }
 
 .time {
@@ -63,4 +65,38 @@ h1 {
     margin: 10px;
     font-size: 1.4em;
     font-weight: bolder;
+}
+
+.fav {
+    background: url('http://imgur.com/I0EwG.png') transparent;
+    height: 24px;
+    width: 24px;
+    border: none;
+    opacity: 0.3;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background-size: 100% 100%;
+}
+
+.liked {
+    opacity: 1.0;
+}
+
+.favButton {
+    height: 40px;
+    width: 150px;
+    border-radius: 2px;
+    background: lightgray;
+    border: 2px solid black;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    line-height: 40px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.active {
+    background: orange;
 }
